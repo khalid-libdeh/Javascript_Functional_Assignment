@@ -1,0 +1,87 @@
+body {
+  background-color:  #fafafa;
+  margin:0;
+  padding:0;
+  font-family: "Nunito Sans";
+}
+h1{
+  font-size: 1.7rem;
+  width:20rem;
+}
+header{
+  min-height: 5rem;
+
+}
+.search-icon{
+  max-height:15px;
+  max-width: 15px;
+}
+
+.card{
+  width: 17rem;
+  height: 23rem;
+  box-shadow: 1px 2px 1px 1px rgba(1,1,1,0.05);
+}
+
+.dropdown{
+ width: 13rem;
+
+}
+.dropdown-menu{
+  width: 13rem;
+  box-shadow: 1px 2px 1px 1px rgba(1,1,1,0.05);
+}
+.dropdown-toggle{
+  box-shadow: 1px 2px 1px 1px rgba(1,1,1,0.05);
+  min-width: 13rem;
+  min-height: 3rem;
+  text-align: left;
+}
+
+.ser{
+  width: 30rem;
+  min-height: 3rem;
+  box-shadow: 1px 2px 1px 1px rgba(1,1,1,0.05);
+  border-radius: 0.2rem;
+}
+.card-img-top{
+  float: inside;
+  min-width:  100%;
+  min-height: 12rem;
+  object-fit: cover;
+}
+.card-body{
+  margin-left: 0.6rem;
+  margin-top: 0.9rem;
+}
+.card-text{
+  font-size:0.9rem;
+
+}
+.card-title{
+  font-size:1.2rem;
+  margin-bottom: 1rem;
+}
+.gy-5{
+  row-gap: 1.2rem;
+}
+.gx-5{
+
+}
+.col{
+display: flex;
+}
+
+.dark{
+  background: #121212;
+  color:white;
+}
+.darkHeader{
+  background-color: #121212;
+  color:black;
+}
+
+.dark header{
+  color:black;
+}
+
