@@ -1,4 +1,4 @@
-export function onFilterChange(cb){
+export async function onFilterChange(cb){
     let elements = document.getElementsByClassName('dropdown-item');
 
     Array.from(elements).forEach((element) => {
@@ -11,14 +11,17 @@ export function onFilterChange(cb){
 
 }
 
-export function filterCountries(countries, filter){
-    let tempCountries = [];
+export function filterCountries(countries, filter, favArray){
+
     if(filter==='No filter')
         return countries;
-
-    countries.forEach((country)=>{
-      if(country['region'].includes(filter))
-          tempCountries.push(country);
+    else if(filter ==='Favourites'){
+        console.log(favArray);
+        console.log(countries);
+        return countries.filter(country=> favArray.includes(country['name']['common']));
+    }
+    let tempCountries = countries.filter((country)=>{
+        return country['region'].includes(filter);
     })
 
     return tempCountries;

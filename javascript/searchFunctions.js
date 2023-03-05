@@ -1,11 +1,11 @@
 export function onSearch(cb){
         let search = document.getElementById('search');
         search.addEventListener('input',()=>{
-                debounce(cb(search.value));
+                debounce(cb(search.value),250);
         });
 }
 
-export function debounce (fn){
+export function debounce (fn, delay){
         let timeoutId;
 
         return (arg) => {
@@ -16,6 +16,6 @@ export function debounce (fn){
                 // setup a new timer
                 timeoutId = setTimeout(() => {
                         fn(arg);
-                }, 600);
+                }, delay);
         };
 };

@@ -1,10 +1,13 @@
 import {loadCountries} from "../loadCountries.js";
 
-export function renderSelectedCountry(country){
+export async function renderSelectedCountry(countryArr){
+
+    let country = countryArr[0];
     let names = Object.values(country['name']['nativeName']);
+    console.log(names[2]);
     let currencies = getInfoAsString(country,'currencies');
     let languages = getInfoAsString(country, 'languages');
-    insertBorderButtons(country);
+    await insertBorderButtons(country);
     document.getElementById('flag-svg').src = country['flags']['svg'];
     document.getElementById('country-name').innerText = country['name']['common'];
     document.getElementById('native-name').innerHTML =`<b>Native Name</b>: ${names[names.length - 1]['common']}`;
@@ -54,12 +57,12 @@ async function insertBorderButtons(country){
 
 }
 
-function createBorderButton(borderCountry){
+ function createBorderButton(borderCountry){
     let buttonString = `<button class="country-btn m-1" role="button">${borderCountry['name']['common']}</button>`;
     let buttonElement = document.createElement('span');
     buttonElement.innerHTML = buttonString;
     buttonElement.addEventListener('click',()=>{
-        renderSelectedCountry(borderCountry);
+       renderSelectedCountry(borderCountry);
     } );
     return buttonElement;
 }

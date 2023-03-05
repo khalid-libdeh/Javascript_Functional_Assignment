@@ -1,10 +1,13 @@
 import {renderSelectedCountry} from "./renderCountry.js";
-import {loadCountries} from "../loadCountries.js";
 import {toggleDark} from "../darkMode.js";
+import {getData} from "../passData.js";
+import {loadCountries} from "../loadCountries.js";
 
-let countries = await loadCountries('all');
-let currentCountry = JSON.parse(localStorage.getItem('currentCountry'));
-renderSelectedCountry(currentCountry);
+let name = (getData('countryName'));
+console.log(name);
+let currentCountry = await loadCountries(name);
+console.log(currentCountry);
+await renderSelectedCountry(currentCountry);
 toggleDark(()=>{
     let bodyDark = document.body;
     bodyDark.classList.toggle("dark");
